@@ -24,28 +24,14 @@ ports:
 
 #Enable auto issuing certificates over cert-manager certificates https://cert-manager.io/docs/concepts/certificate/
 certificate:
-  enabled: true
-  # REPLACE ME
-  host:
-  secret: "turn-tls"
-  issuerName: "letsencrypt"
+  enabled: false
+
 
 config:
   auth:
     username: "turnUser"
-    # REPLACE ME
-    password:
-  externalDatabase:
-    #REPLACE ME IF NEEDED
-    user: ""
-    #REPLACE ME IF NEEDED
-    host: ""
-    #REPLACE ME IF NEEDED
-    database: ""
-    #REPLACE ME IF NEEDED
-    port: ""
-    #REPLACE ME IF NEEDED
-    password: ""
+    password: 123
+
   turnserver: |
     realm={{ .Values.certificate.host }}
     listening-ip=0.0.0.0
